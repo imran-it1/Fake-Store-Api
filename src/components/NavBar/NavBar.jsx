@@ -3,7 +3,7 @@ import logo from '../../assets/logo.png';
 const NavBar = () => {
 	return (
 		<div>
-			<nav className=" bg-white shadow-xl py-5">
+			<nav className=" bg-white shadow-xl py-2">
 				<div className="container mx-auto flex items-center justify-between">
 					<div className=" flex items-center gap-3">
 						<figure>
@@ -18,7 +18,7 @@ const NavBar = () => {
 						</Link>
 					</div>
 
-					<ul className=" flex items-center gap-12 text-xl font-medium">
+					<ul className=" flex items-center gap-12 text-base font-medium">
 						<li className="flex justify-center items-center underline hover:underline hover:decoration-2 hover:underline-offset-2 hover:text-green-500 transition-all duration-200 ease-in">
 							<NavLink
 								to="/"
