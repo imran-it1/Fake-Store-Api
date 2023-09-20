@@ -9,22 +9,34 @@ import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Contact from './pages/Contact/Contact';
 import Dashboard from './pages/Dashboard/Dashboard';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import Profile from './components/Profile/Profile';
+import EditProfile from './components/Edit Profile/EditProfile';
+import OrderTrack from './components/Order Track/OrderTrack';
+import OrderHistory from './components/Order History/OrderHistory';
+import Account from './pages/Account/Account';
 
 const routers = createBrowserRouter([
 	{
 		path: '/',
 		element: <MainLayout></MainLayout>,
+		errorElement: <ErrorPage></ErrorPage>,
 
 		children: [
 			{
 				path: '/',
 				element: <HomePage></HomePage>,
-				errorElement: <ErrorPage></ErrorPage>,
 			},
 			{
 				path: '/products',
 				element: <Products></Products>,
 				loader: () => fetch('https://fakestoreapi.com/products'),
+			},
+
+			{
+				path: '/products/:Id',
+				element: <ProductDetails></ProductDetails>,
+				loader: ({ params }) =>
+					fetch(`https://fakestoreapi.com/products/${params.Id}`),
 			},
 
 			{
@@ -35,13 +47,30 @@ const routers = createBrowserRouter([
 			{
 				path: '/dashboard',
 				element: <Dashboard></Dashboard>,
+
+				children: [
+					{
+						path: '/dashboard/profile',
+						element: <Profile></Profile>,
+					},
+					{
+						path: '/dashboard/edit-profile',
+						element: <EditProfile></EditProfile>,
+					},
+					{
+						path: '/dashboard/order-track',
+						element: <OrderTrack></OrderTrack>,
+					},
+					{
+						path: '/dashboard/order-history',
+						element: <OrderHistory></OrderHistory>,
+					},
+				],
 			},
 
 			{
-				path: '/products/:Id',
-				element: <ProductDetails></ProductDetails>,
-				loader: ({ params }) =>
-					fetch(`https://fakestoreapi.com/products/${params.Id}`),
+				path: '/account',
+				element: <Account></Account>,
 			},
 		],
 	},

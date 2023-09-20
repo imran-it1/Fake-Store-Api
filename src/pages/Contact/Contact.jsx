@@ -1,6 +1,6 @@
 const Contact = () => {
 	return (
-		<div className=" flex w-full h-full items-center justify-center">
+		<div className=" flex w-full items-center justify-center">
 			<form>
 				<div className="form-group">
 					<label htmlFor="name">Name</label>

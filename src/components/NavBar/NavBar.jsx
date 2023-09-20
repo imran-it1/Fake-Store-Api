@@ -22,7 +22,7 @@ const NavBar = () => {
 					</ul>
 
 					<div>
-						<Link>Account</Link>
+						<NavLink to={'/account'}>Account</NavLink>
 					</div>
 				</div>
 			</nav>

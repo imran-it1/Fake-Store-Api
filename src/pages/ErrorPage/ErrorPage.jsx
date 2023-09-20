@@ -1,15 +1,14 @@
-import { useRouteError } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
-	const error = useRouteError();
-
 	return (
-		<div>
-			<h1>Oops!</h1>
-			{/* <p>Sorry, an unexpected error has occurred.</p>
-			<p>
-				<i>{error.statusText || error.message}</i>
-			</p> */}
+		<div className=" flex justify-center items-center flex-col gap-5">
+			<h1 className="text-7xl text-center">oops!!!</h1>
+			<Link to={'/'}>
+				<button type="submit" className="btn btn-primary">
+					Home
+				</button>
+			</Link>
 		</div>
 	);
 };
