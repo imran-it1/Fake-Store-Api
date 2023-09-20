@@ -18,7 +18,10 @@ const Product = ({ product }) => {
 					<p>{title}</p>
 					<p>{price}</p>
 
-					<button className=" px-3 py-1 bg-teal-400 rounded-md">
+					<button
+						type="button"
+						className="text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+					>
 						<Link
 							to={`/products/${id}`}
 							className=" text-white font-bold"
